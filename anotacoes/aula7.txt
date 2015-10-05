@@ -1,0 +1,1 @@
+para trabalhar com sessões no CI, primeiro, carregamos a session em autoload, como fizemos anteriormente com o database. Depois, setamos um encrypt em config.php

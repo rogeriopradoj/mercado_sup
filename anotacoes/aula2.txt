@@ -1,0 +1,17 @@
+Todo o código que acessa o banco devemos extrair em um arquivo de modelo que serve só para acessar o banco
+
+
+agora, ao invés de chamarmos algo de um array, iremos charmar dados do banco, substituindo:
+
+		$produtos = array();
+		$bola = array("nome" => "Bola de Futebol",
+					"descricao" => "Bola de Futebol assinada pelo Zico",
+					"preco" => 300);
+		$hd = array("nome" => "HD externo usado",
+					"descricao" => "Marca Mega-HD 300 teras, comprado em 1997",
+					"preco" => 400);
+		array_push($produtos, $bola, $hd);
+
+
+
+por $produtos = "dobanco"

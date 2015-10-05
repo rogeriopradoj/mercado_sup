@@ -1,0 +1,17 @@
+Notes:
+
+controller: executam lógica de negócios
+
+public function index() : A função a ser carregado por padrão
+
+//DEFINIR ROTAS
+folder config>routes.php
+
+altera-se do padrão "welcome" para "produtos", no caso deste projeto
+
+as "views" normalmente não extendem nada, pois são carregadas atráves do "$this->load->view("sub_pasta_da_view/view.php
+$this->load->view("produtos/index.php", $dados); // passamos as várias como parâmeto, neste caso a variável $dados passa a existem em "produtos/index.php"
+podendo ser, por exemplo, ecoada na tela.
+
+claudia.oliveira@atitude.com.br
+banco ag cc titular cpf

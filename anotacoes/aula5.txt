@@ -1,0 +1,52 @@
+criado um formulário a partir do helper "form":
+
+		<?php
+		echo form_open("usuarios/novo");
+		
+		echo form_label("Nome", "nome");
+		echo form_input(array(
+						"name" => "nome",
+						"id"   => "nome",
+						"class" => "form-control",
+						"maxlength" => "255"
+
+						));
+		(...)
+
+		echo "<br />\n";
+		echo form_button(array(
+						"class" => "btn btn-primary",
+						"content" => "Cadastrar",
+						"type"  => "submit"
+						));
+		echo form_close();	
+		?>
+-------------------------------------------------------------------
+criado um controller "usuarios.php" para receber os dados do cliente:
+a primeira coisa a se fazer é adicionar a linha:
+
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+para que nenhum usuário que não tenha direito acesse este endereço.
+
+se iremos acessar o banco de dados, a primeira coisa a se fazer é carregar o banco de dados. Como iremos acessar esse banco a partir de um modelo, devemos carregar o modelo:
+
+usuarios.php -- linha 7
+$this->load->model("usuarios_model");
+
+após isso, chamamos o método salva():
+$this->usuarios_model->salva($usuario);
+
+
+-------------------------------------------
+usuarios.php -- linha 4
+function novo() possui um array $usuario que contem os dados a serem tratatos pela model "usuarios_model", na usuario model, utilizamos uma função para salvar na linha 4:
+	public function salva($usuarios) {
+		$this->db->insert("usuarios", $usuario)
+	}
+
+	na função salva, que recebe $usuario. o insert recebe dois parametros, o primeiro é tabela onde os dados serão gravados (usuarios), e a segunda a váriavel que possui um array que contem os dados a serem gravados ($usuario).
+
+
+
+

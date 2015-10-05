@@ -1,0 +1,18 @@
+change
+alterado a configuração de sessão em views/index.php
+
+<!-- Se o usuário estiver logado, mostra a lista de produtos e o botão logout-->
+	<?php if($this->session->userdata("usuario_logado")) : ?>
+		<?= anchor('login/logout', 'Logout', array("class" => "btn btn-primary")) ?>
+	<?php else :  ?>
+
+controller/login.php/
+retirado:
+$this->load->view("login/autenticar", $dados);
+substituído por:
+redirect('/');
+
+feito isso é necessário carregar um helper de url no config/autoload.php, para que não tenha que loadar este helper toda vez que precisarmos. então, apagamos o parâmeto url do $this->load->helper(array()); em controllers/prudots.php
+
+
+

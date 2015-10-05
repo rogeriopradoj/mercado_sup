@@ -1,0 +1,9 @@
+Para que não tenhamos que carregar sempre o $this->load->database() em todo controller que vier a trabalhar com o banco, nós vamos na pasta config do ci, e setamos a biblioteca "database" em $autoload['libraries'] = array();
+
+em seguida, retiramos todos os loads de banco de dados das controllers
+
+----------------------------------------------------------------------------------------
+
+para verificar o que está acontecendo com o PHP, devemos incluir no controller em que se quer verificar algo:
+
+$this->output->enable_profile("produtos-model");

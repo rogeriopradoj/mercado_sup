@@ -1,0 +1,27 @@
+Problemas com css. O CSS está sendo referenciado no index, o navegador está considerando que o CSS está dentro da pasta produto, quando na verdade está no dir mercado. Para resolver isso no CI usamos o base_url() que concatena o diretório correto... veja exemplo:
+
+base_url():
+
+<?= base_url("css/bootstrap.css) ?>
+
+
+base_url() é um helper e precisa ser carregado no controller
+
+------------------------------------------------------------------------------------
+
+Criando o próprio helper para problemas com moeda:
+
+helper/currency_helper.php
+<?php
+function numeroEmReais($numero) {
+	return "R$ " .  number_format($numero, 2, ",", ".");
+}
+?>
+
+views/index.php
+...
+<td><?= numeroEmReais($produto["preco"]) ?></td>
+
+e não se esquecer de carregar este helper na função index do controller:
+
+$this->load->helper("currency");
